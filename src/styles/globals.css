@@ -105,3 +105,54 @@ a {
     color-scheme: dark;
   }
 }
+
+/* APP layout and navigation bar CSS */
+.app-bar {
+  box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  background-color: white !important;
+  background-repeat: no-repeat;
+}
+
+.layout-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100vh;
+}
+
+.layout-content {
+  width: calc(100vh - 260px);
+}
+
+.nav-btn.active {
+  background: linear-gradient(60deg,#bc4747,#aa2424) !important;
+  color: white !important;
+  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(156 39 176 / 40%);
+}
+
+.nav-btn.active:hover {
+  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(156 39 176 / 40%);
+}
+
+.card-header-icon-box {
+  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(156 39 176 / 40%);
+  border-radius: 3px;
+}
+
+.react-confirm-alert-overlay {
+  z-index: 99999 !important;
+}
+
+@media screen and (max-width: 821px) {
+  .app-bar {
+    width: 100px !important;
+  }
+  .layout-content {
+    width: calc(100vh - 100px);
+  }
+  .left-icon-bar {
+    width: 70px !important;
+  }
+  .mobile-hide {
+    display: none;
+  }
+}

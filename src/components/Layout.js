@@ -1,38 +1,38 @@
 // components/layout.js
-import { useState } from "react"
-import { useRouter } from 'next/router'
-import Box from '@mui/material/Box'
-import Stack from '@mui/material/Stack'
-import Grid from '@mui/material/Grid'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Divider from '@mui/material/Divider'
-import Button from '@mui/material/Button'
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
-import MedicationIcon from '@mui/icons-material/Medication'
-import MoveDownIcon from '@mui/icons-material/MoveDown'
-import SwitchAccountIcon from '@mui/icons-material/SwitchAccount'
-import WindowIcon from '@mui/icons-material/Window'
-import ExitToAppIcon from '@mui/icons-material/ExitToApp'
-import NavigationTab from "./NavigationTab"
+import { useState, } from "react";
+import { useRouter, } from "next/router";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import Button from "@mui/material/Button";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import MedicationIcon from "@mui/icons-material/Medication";
+import MoveDownIcon from "@mui/icons-material/MoveDown";
+import SwitchAccountIcon from "@mui/icons-material/SwitchAccount";
+import WindowIcon from "@mui/icons-material/Window";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import NavigationTab from "./NavigationTab";
 
-export default function Layout({ children }) {
+export default function Layout({ children, }) {
 
-  const [isLogIn, setIsLogIn] = useState(true)
-  const router = useRouter()
+  const [isLogIn, setIsLogIn,] = useState(true);
+  const router = useRouter();
 
   const pageCheck = (tab) => {
-    return router.pathname.includes(tab)
-  }
+    return router.pathname.includes(tab);
+  };
 
   return (
     <>
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: "100%", }}>
         <Stack spacing={2}>
           <div className="layout-row">
             <div>
-              <AppBar className="app-bar" sx={{ width: "260px", height: "100%", left: 0 }}>
+              <AppBar className="app-bar" sx={{ width: "260px", height: "100%", left: 0, }}>
                 <Toolbar
                   disableGutters
                   sx={{
@@ -51,7 +51,7 @@ export default function Layout({ children }) {
                       height: "100%",
                     }}
                   >
-                    <Grid item sx={{ width: "100%", pt: 2 }}>
+                    <Grid item sx={{ width: "100%", pt: 2, }}>
                       <Typography
                         variant="h6"
                         noWrap
@@ -61,7 +61,7 @@ export default function Layout({ children }) {
                           letterSpacing: ".1rem",
                           backgroundColor: "white",
                           textDecoration: "none",
-                          textAlign: 'center',
+                          textAlign: "center",
                           lineHeight: 1,
                           color: "#3c4858",
                           ml: 4,
@@ -69,25 +69,25 @@ export default function Layout({ children }) {
                       >
                         <span className="mobile-hide">{process.env.NEXT_PUBLIC_APP_NAME}</span>
                       </Typography>
-                      <Divider sx={{ mt: 2 }} variant="middle" flexItem />
+                      <Divider sx={{ mt: 2, }} variant="middle" flexItem />
                       {isLogIn && (
-                        <Box className="left-icon-bar" sx={{ width: "228px", pl: 2, pr: 2, mt: 2 }}>
-                          <NavigationTab link="/user" selected={pageCheck("/user")} name="User" icon={<SwitchAccountIcon sx={{ transform: "scale(1.2)", mr: 1 }} />} />
-                          <NavigationTab link="/todo_list" selected={pageCheck("/todo_list")} name="Dashboard" icon={<WindowIcon sx={{ transform: "scale(1.2)", mr: 1 }} />} />
-                          <NavigationTab link="/transfer" selected={pageCheck("/transfer")} name="Transfer" icon={<MoveDownIcon sx={{ transform: "scale(1.2)", mr: 1 }} />} />
-                          <NavigationTab link="/drugs" selected={pageCheck("/drugs")} name="Drugs" icon={<MedicationIcon sx={{ transform: "scale(1.2)", mr: 1 }} />} />
-                          <Divider variant="middle" flexItem sx={{ mt: 3 }} />
+                        <Box className="left-icon-bar" sx={{ width: "228px", pl: 2, pr: 2, mt: 2, }}>
+                          <NavigationTab link="/user" selected={pageCheck("/user")} name="User" icon={<SwitchAccountIcon sx={{ transform: "scale(1.2)", mr: 1, }} />} />
+                          <NavigationTab link="/todo_list" selected={pageCheck("/todo_list")} name="Dashboard" icon={<WindowIcon sx={{ transform: "scale(1.2)", mr: 1, }} />} />
+                          <NavigationTab link="/transfer" selected={pageCheck("/transfer")} name="Transfer" icon={<MoveDownIcon sx={{ transform: "scale(1.2)", mr: 1, }} />} />
+                          <NavigationTab link="/drugs" selected={pageCheck("/drugs")} name="Drugs" icon={<MedicationIcon sx={{ transform: "scale(1.2)", mr: 1, }} />} />
+                          <Divider variant="middle" flexItem sx={{ mt: 3, }} />
                           <Button
                             className="nav-btn"
-                            startIcon={<ExitToAppIcon sx={{ transform: "scale(1.2)", mr: 1 }} />}
+                            startIcon={<ExitToAppIcon sx={{ transform: "scale(1.2)", mr: 1, }} />}
                             color="error"
                             sx={{
                               display: "flex",
                               justifyContent: "start",
                               mt: 2,
                               pl: 3,
-                              pt: '12px',
-                              pb: '12px',
+                              pt: "12px",
+                              pb: "12px",
                             }}
                             size="large"
                             fullWidth
@@ -97,18 +97,18 @@ export default function Layout({ children }) {
                         </Box>
                       )}
                     </Grid>
-                    <Grid item sx={{ width: "100%!important", pl: 2, pr: 2, pb: 2}}>
+                    <Grid item sx={{ width: "100%!important", pl: 2, pr: 2, pb: 2,}}>
                       <Button
                         className="nav-btn"
-                        startIcon={<ArrowBackIosNewIcon sx={{ transform: "scale(1.3)", mr: 1 }} />}
+                        startIcon={<ArrowBackIosNewIcon sx={{ transform: "scale(1.3)", mr: 1, }} />}
                         sx={{
                           display: "flex",
                           justifyContent: "start",
                           color: "#a9afbb",
                           backgroundColor: "transparent",
                           pl: 3,
-                          pt: '12px',
-                          pb: '12px',
+                          pt: "12px",
+                          pb: "12px",
                         }}
                         size="large"
                         fullWidth
@@ -128,5 +128,5 @@ export default function Layout({ children }) {
         </Stack>
       </Box>
     </>
-  )
+  );
 }

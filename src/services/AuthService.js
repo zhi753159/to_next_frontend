@@ -1,13 +1,13 @@
-import Repository from '../plugins/http';
+import Repository from "../plugins/http";
 
-const resource = '/auth';
+const resource = "/auth";
 
 const login = (payload) => {
-    return Repository.post(`${resource}/login`,payload);
+  return Repository.post(`${resource}/login`,payload);
 };
 
 const AuthService = {
-    login,
+  login,
 };
 
 export default AuthService;

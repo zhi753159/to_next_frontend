@@ -108,6 +108,7 @@ a {
 
 /* APP layout and navigation bar CSS */
 .app-bar {
+  width: 230px;
   box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
   background-color: white !important;
   background-repeat: no-repeat;
@@ -116,11 +117,15 @@ a {
 .layout-row {
   display: flex;
   justify-content: space-between;
-  width: 100vh;
+  width: 100vw;
+}
+
+.layout-navigation {
+  width: 230px;
 }
 
 .layout-content {
-  width: calc(100vh - 260px);
+  width: calc(100vw - 230px);
 }
 
 .nav-btn.active {
@@ -143,16 +148,27 @@ a {
 }
 
 @media screen and (max-width: 821px) {
+  .layout-navigation{
+    width: 96px;
+  }
   .app-bar {
-    width: 100px !important;
+    width: 96px;
   }
   .layout-content {
-    width: calc(100vh - 100px);
+    width: calc(100vw - 96px);
   }
   .left-icon-bar {
-    width: 70px !important;
+    width: 70px;
   }
   .mobile-hide {
     display: none;
   }
+}
+
+.layout-stack.login .layout-navigation {
+  display: none;
+}
+
+.layout-stack.login .layout-content {
+  width: 100vw;
 }

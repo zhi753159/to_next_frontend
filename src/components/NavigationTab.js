@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 
-export default function NavigationTab({ icon, selected, name, link, }) {
+export default function NavigationTab({ icon, selected, name, link }) {
   return (
     <Link href={link} underline="none">
       <Button

@@ -12,6 +12,18 @@ yarn dev
 pnpm dev
 ```
 
+## Before commit
+1. npm run lint
+
+(check if any error on console)
+(If any error found)
+
+3. npm lint-fix
+4. npm run lint
+
+(If still error found)
+5. manual fix the error
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.

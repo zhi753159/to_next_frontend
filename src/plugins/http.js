@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 // Next we make an 'instance' of it
 const instance = axios.create({
 // .. where we make our configurations
@@ -11,7 +11,7 @@ instance.interceptors.response.use((response) => {
 }, (error) => {
   if (error.response) {
     if (error.response.status === 403 || error.response.status === 401) {
-      window.location.href = "login?unauthorized=true";
+      window.location.href = 'login?unauthorized=true';
     }
   }
 

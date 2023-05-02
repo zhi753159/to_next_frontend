@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import config from "../plugins/config";
-import toastHelper from "../plugins/toastHelper";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import { IconButton, Typography, Divider } from "@mui/material";
-import Box from "@mui/material/Box";
-import FaceIcon from "@mui/icons-material/Face";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import { Inter } from 'next/font/google';
+import styles from '@/styles/Home.module.css';
+import config from '../plugins/config';
+import toastHelper from '../plugins/toastHelper';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { IconButton, Typography, Divider } from '@mui/material';
+import Box from '@mui/material/Box';
+import FaceIcon from '@mui/icons-material/Face';
 import {
   Grid,
   TextField,
   Button,
-} from "@mui/material";
-import { ToastContainer } from "react-toastify";
+} from '@mui/material';
+import { ToastContainer } from 'react-toastify';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 
@@ -24,7 +24,7 @@ export default function Home() {
   const [password, setPassword] = useState();
 
   const login = () => {
-    toastHelper.Error("Username or password is not correct!");
+    toastHelper.Error('Username or password is not correct!');
   };
 
   return (
@@ -43,12 +43,12 @@ export default function Home() {
                 <IconButton
                   id="order"
                   sx={{
-                    color: "white",
+                    color: 'white',
                     mt: 2,
                     ml: 2,
                   }}
                 >
-                  <FaceIcon sx={{ transform: "scale(1.8)", ml: 1, mt: 1 }} />
+                  <FaceIcon sx={{ transform: 'scale(1.8)', ml: 1, mt: 1 }} />
                 </IconButton>
               </Box>
               <Typography variant="h6" sx={config.style.content.header.title}>
@@ -79,7 +79,7 @@ export default function Home() {
                 value={password}
                 sx={{ mb: 2 }}
                 onKeyPress={(e) => {
-                  if (e.key === "Enter") {
+                  if (e.key === 'Enter') {
                     login();
                   }
                 }}
